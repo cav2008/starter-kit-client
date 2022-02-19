@@ -1,0 +1,7 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    # Files stored in `/` directory
+    directory: "/"
+    schedule:
+      interval: "weekly"
