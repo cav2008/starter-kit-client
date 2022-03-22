@@ -54,10 +54,10 @@ module.exports = {
     }),
     new HotModuleReplacementPlugin(),
   ],
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   devServer: {
     port: 8000,
     open: true,
-    hot: true
+    hot: true,
   },
 };
