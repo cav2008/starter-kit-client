@@ -9,6 +9,7 @@ import './global.pcss';
 const App = () => {
   const dispatch = useAppDispatch();
   const example = useAppSelector((state) => state.examples.example);
+  const exampleWithDate = useAppSelector((state) => state.examples.exampleWithDate);
 
   const onExampleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateExample(e.target.value));
@@ -23,7 +24,7 @@ const App = () => {
       <h1 className="text-8xl text-blue-600">Hello, world!</h1>
       <span>example: {example}</span>
       <input className="border" type="text" onChange={onExampleChange} />
-      <span>example with date</span>
+      <span>example with date: {exampleWithDate.createdAt}</span>
       <input className="border" type="text" onChange={onExampleWithDateChange} />
     </>
   );
