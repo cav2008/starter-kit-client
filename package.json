@@ -31,7 +31,7 @@
     "react-redux": "^7.2.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.5",
+    "@babel/core": "^7.17.8",
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
@@ -45,7 +45,7 @@
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
-    "css-loader": "^6.6.0",
+    "css-loader": "^6.7.1",
     "eslint": "^8.11.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^16.1.0",
