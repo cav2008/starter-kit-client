@@ -40,12 +40,14 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
-    // alias: {
-    //   '@pages': path.resolve(__dirname, 'src/pages/'),
-    //   '@components': path.resolve(__dirname, 'src/components/'),
-    //   '@assets': path.resolve(__dirname, 'src/assets/'),
-    //   '@interfaces': path.resolve(__dirname, 'src/interfaces/'),
-    // },
+    alias: {
+      '@src': path.resolve(__dirname, 'src'),
+      '@pages': path.resolve(__dirname, 'src/pages/'),
+      '@components': path.resolve(__dirname, 'src/components/'),
+      '@assets': path.resolve(__dirname, 'src/assets/'),
+      '@interfaces': path.resolve(__dirname, 'src/interfaces/'),
+      '@slices': path.resolve(__dirname, 'src/slices/'),
+    },
   },
   plugins: [
     new HtmlWebPackPlugin({
@@ -59,5 +61,6 @@ module.exports = {
     port: 8000,
     open: true,
     hot: true,
+    historyApiFallback: true,
   },
 };
