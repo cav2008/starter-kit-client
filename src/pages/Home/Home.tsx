@@ -19,14 +19,21 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div className="p-4">
       <h1 className="text-8xl text-blue-600">Hello, world!</h1>
-      <span>example: {example}</span>
-      <input className="border" type="text" onChange={onExampleChange} />
-      <span>example with date: {exampleWithDate.createdAt}</span>
-      <input className="border" type="text" onChange={onExampleWithDateChange} />
-      <Link className="bg-blue-400 border rounded-xl pointer" to="/example">Example page</Link>
-    </>
+      <div>
+        <span className="mr-4">example: {example}</span>
+        <input className="border" type="text" onChange={onExampleChange} />
+        <br />
+        <span className="mr-4">example with date: {exampleWithDate.createdAt}</span>
+        <input className="border" type="text" onChange={onExampleWithDateChange} />
+      </div>
+      <div>
+        <Link className="bg-blue-400 border rounded-xl pointer p-2 inline-block" to="/example">
+          Example page &gt;
+        </Link>
+      </div>
+    </div>
   );
 };
 
