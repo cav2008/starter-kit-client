@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { updateExample, updateExampleWithDate } from '@slices/exampleSlice';
-// we use this hook so we don't need to type it all the time.
-import { useAppDispatch, useAppSelector } from '@src/hooks';
+// We use this hook so we don't need to type it all the time.
+import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -21,13 +21,24 @@ const Home = () => {
   return (
     <div className="p-4">
       <h1 className="text-8xl text-blue-600">Hello, world!</h1>
-      <div>
-        <span className="mr-4">example: {example}</span>
-        <input className="border" type="text" onChange={onExampleChange} />
+      <form>
+        <label className="mr-4" htmlFor="example">
+          example input:
+          <input id="example" className="border ml-2" type="text" onChange={onExampleChange} />
+        </label>
+        <span data-testid="example-result">{example}</span>
         <br />
-        <span className="mr-4">example with date: {exampleWithDate.createdAt}</span>
-        <input className="border" type="text" onChange={onExampleWithDateChange} />
-      </div>
+        <label className="mr-4" htmlFor="example-with-date">
+          example with date:
+          <input
+            id="example-with-date"
+            className="border ml-2"
+            type="text"
+            onChange={onExampleWithDateChange}
+          />
+        </label>
+        <span data-testid="example-with-date-result">{exampleWithDate.createdAt}</span>
+      </form>
       <div>
         <Link className="bg-blue-400 border rounded-xl pointer p-2 inline-block" to="/example">
           Example page &gt;

@@ -40,13 +40,15 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    // Make sure you update alias in jest.config.js and tsconfig.json
     alias: {
-      '@src': path.resolve(__dirname, 'src'),
       '@pages': path.resolve(__dirname, 'src/pages/'),
       '@components': path.resolve(__dirname, 'src/components/'),
       '@assets': path.resolve(__dirname, 'src/assets/'),
       '@interfaces': path.resolve(__dirname, 'src/interfaces/'),
       '@slices': path.resolve(__dirname, 'src/slices/'),
+      '@hooks': path.resolve(__dirname, 'src/hooks/'),
+      '@utils': path.resolve(__dirname, 'src/utils/'),
     },
   },
   plugins: [
