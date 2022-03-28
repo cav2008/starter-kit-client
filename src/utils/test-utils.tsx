@@ -4,13 +4,13 @@ import { render as rtlRender, RenderResult } from '@testing-library/react';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 // Import your own reducer
-import exampleReducer from '@slices/exampleSlice';
+import rootReducer from '@slices/reducer';
 
 function render(
   ui: React.ReactElement,
   {
     preloadedState,
-    store = configureStore({ reducer: { examples: exampleReducer }, preloadedState }),
+    store = configureStore({ reducer: rootReducer, preloadedState }),
     ...renderOptions
   } = {}
 ): RenderResult {

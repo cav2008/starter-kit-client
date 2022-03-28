@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from '@pages/Home/Home';
-import Example from '@pages/Example/Example';
+import Example from '@pages/Example';
 
 import './global.pcss';
 

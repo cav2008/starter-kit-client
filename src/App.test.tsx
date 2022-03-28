@@ -1,5 +1,6 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
+// Use test-utils file because it wraps the render method with provider and redux store.
 import { render, screen } from '@utils/test-utils';
 import App from './App';
 

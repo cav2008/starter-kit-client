@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { updateExample, updateExampleWithDate } from '@slices/exampleSlice';
-// We use this hook so we don't need to type it all the time.
+// We use this hook so we don't need to add types all the time.
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 
 const Home = () => {
