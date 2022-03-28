@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack serve --config webpack.config.dev.js",
     "build": "webpack --config webpack.config.prod.js",
-    "test": "jest"
+    "lint": "eslint ./src",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch --verbose"
   },
   "repository": {
     "type": "git",
