@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Example = () => <h1 className="text-3xl">Example</h1>;
+import styles from './Example.module.pcss';
+
+const Example = () => <h1 className={styles.examplePink}>Example</h1>;
 
 export default Example;
