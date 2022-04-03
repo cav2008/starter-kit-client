@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const HotModuleReplacementPlugin = require('webpack').HotModuleReplacementPlugin;
+const { HotModuleReplacementPlugin } = require('webpack');
 
 module.exports = {
   mode: 'development',

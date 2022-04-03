@@ -20,8 +20,9 @@
   },
   "plugins": ["prettier"],
   "rules": {
+    "@typescript-eslint/no-var-requires": "warn",
     "prettier/prettier": ["error"],
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
-    "react/function-component-definition": 0
+    "react/function-component-definition": "off"
   }
 }
