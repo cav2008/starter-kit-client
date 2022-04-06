@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <div className="p-4">
-      <h1 className="text-8xl text-blue-600">Hello, world!</h1>
+      <h1 className="text-8xl text-blue-600">Hacked!</h1>
       <form>
         <label className="mr-4" htmlFor="example">
           example input:
