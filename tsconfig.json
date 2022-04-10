@@ -33,6 +33,7 @@
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
       "@interfaces/*": ["src/interfaces/*"],
+      "@api/*": ["src/api/*"],
       "@slices/*": ["src/slices/*"],
       "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],

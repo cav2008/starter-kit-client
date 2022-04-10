@@ -19,6 +19,7 @@ const exampleSlice = createSlice({
       reducer: (state, action: PayloadAction<{ text: string; createdAt: string }>) => {
         state.exampleWithDate = action.payload;
       },
+      // prepare the payload for the reducer
       prepare: (text: string) => {
         const createdAt = new Date().toISOString();
 

@@ -7,6 +7,7 @@ module.exports = {
     '@components/(.*)': '<rootDir>/src/components/$1',
     '@assets/(.*)': '<rootDir>/src/assets/$1',
     '@interfaces/(.*)': '<rootDir>/src/interfaces/$1',
+    '@api/(.*)': '<rootDir>/src/api/$1',
     '@slices/(.*)': '<rootDir>/src/slices/$1',
     '@hooks/(.*)': '<rootDir>/src/hooks/$1',
     '@utils/(.*)': '<rootDir>/src/utils/$1',
