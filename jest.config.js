@@ -3,7 +3,6 @@ module.exports = {
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
   moduleDirectories: ['node_modules'],
   moduleNameMapper: {
-    '@pages/(.*)': '<rootDir>/src/pages/$1',
     '@components/(.*)': '<rootDir>/src/components/$1',
     '@assets/(.*)': '<rootDir>/src/assets/$1',
     '@interfaces/(.*)': '<rootDir>/src/interfaces/$1',

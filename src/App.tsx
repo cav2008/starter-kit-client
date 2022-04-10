@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Home from '@pages/Home/Home';
-import Example from '@pages/Example';
+import Home from '@components/pages/Home';
+import Example from '@components/pages/Example';
 
 import './global.pcss';
 
