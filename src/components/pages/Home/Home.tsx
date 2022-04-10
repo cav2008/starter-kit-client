@@ -22,6 +22,11 @@ const Home = () => {
 
   return (
     <div className="p-4">
+      <div>
+        <Link className="bg-blue-400 border rounded-xl pointer p-2 inline-block" to="/example">
+          Example page &gt;
+        </Link>
+      </div>
       <h1 className="text-8xl text-blue-600">Hello, world!</h1>
       <form>
         <label className="mr-4" htmlFor="example">
@@ -41,11 +46,6 @@ const Home = () => {
         </label>
         <span data-testid="example-with-date-result">{exampleWithDate.createdAt}</span>
       </form>
-      <div>
-        <Link className="bg-blue-400 border rounded-xl pointer p-2 inline-block" to="/example">
-          Example page &gt;
-        </Link>
-      </div>
       {isLoading ? (
         <>Loading...</>
       ) : (
