@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 
 import store from './store';
@@ -7,9 +7,9 @@ import App from './App';
 
 const containerDOM = document.getElementById('container');
 
-ReactDOM.render(
+const root = createRoot(containerDOM!);
+root.render(
   <Provider store={store}>
     <App />
-  </Provider>,
-  containerDOM
+  </Provider>
 );
