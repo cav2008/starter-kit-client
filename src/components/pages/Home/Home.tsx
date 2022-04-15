@@ -4,13 +4,11 @@ import { Link } from 'react-router-dom';
 import { updateExample, updateExampleWithDate } from '@slices/exampleSlice';
 // We use this hook so we don't need to add types all the time.
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
-import { useGetPokemonByNameQuery } from '@api/pokemon';
 
 const Home = () => {
   const dispatch = useAppDispatch();
-  const example = useAppSelector((state) => state.client.examples.example);
-  const exampleWithDate = useAppSelector((state) => state.client.examples.exampleWithDate);
-  const { data, isLoading } = useGetPokemonByNameQuery('pikachu');
+  const example = useAppSelector((state) => state.home.example);
+  const exampleWithDate = useAppSelector((state) => state.home.exampleWithDate);
 
   const onExampleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateExample(e.target.value));
@@ -46,14 +44,6 @@ const Home = () => {
         </label>
         <span data-testid="example-with-date-result">{exampleWithDate.createdAt}</span>
       </form>
-      {isLoading ? (
-        <>Loading...</>
-      ) : (
-        <>
-          <h3>{data?.species.name}</h3>
-          <img src={data?.sprites.front_shiny} alt={data?.species.name} />
-        </>
-      )}
     </div>
   );
 };

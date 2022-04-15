@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-const exampleSlice = createSlice({
-  name: 'example',
+const homeSlice = createSlice({
+  name: 'home',
   initialState: {
     example: 'replace_this',
     exampleWithDate: {
@@ -34,6 +34,6 @@ const exampleSlice = createSlice({
   },
 });
 
-export const { updateExample, updateExampleWithDate } = exampleSlice.actions;
+export const { updateExample, updateExampleWithDate } = homeSlice.actions;
 
-export default exampleSlice.reducer;
+export default homeSlice.reducer;
