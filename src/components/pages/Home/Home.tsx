@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { updateExample, updateExampleWithDate } from '@slices/exampleSlice';
+import { updateExample, updateExampleWithDate, fetchPokemon } from '@slices/homeSlice';
 // We use this hook so we don't need to add types all the time.
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
 
@@ -9,6 +9,15 @@ const Home = () => {
   const dispatch = useAppDispatch();
   const example = useAppSelector((state) => state.home.example);
   const exampleWithDate = useAppSelector((state) => state.home.exampleWithDate);
+  const pokemon = useAppSelector((state) => state.home.pokemon);
+
+  useEffect(() => {
+    const fetch = async (): Promise<void> => {
+      await dispatch(fetchPokemon('pikachu'));
+    };
+
+    void fetch();
+  }, []);
 
   const onExampleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateExample(e.target.value));
@@ -44,6 +53,11 @@ const Home = () => {
         </label>
         <span data-testid="example-with-date-result">{exampleWithDate.createdAt}</span>
       </form>
+
+      <div>
+        <p>{pokemon.species.name}</p>
+        <img src={pokemon.sprites.front_default} />
+      </div>
     </div>
   );
 };
