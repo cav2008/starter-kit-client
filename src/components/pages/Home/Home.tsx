@@ -12,11 +12,7 @@ const Home = () => {
   const pokemon = useAppSelector((state) => state.home.pokemon);
 
   useEffect(() => {
-    const fetch = async (): Promise<void> => {
-      await dispatch(fetchPokemon('pikachu'));
-    };
-
-    void fetch();
+    dispatch(fetchPokemon('pikachu'));
   }, []);
 
   const onExampleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -55,7 +51,7 @@ const Home = () => {
       </form>
 
       <div>
-        <p>{pokemon.species.name}</p>
+        <p data-testid="pokemon-name">{pokemon.species.name}</p>
         <img src={pokemon.sprites.front_default} />
       </div>
     </div>

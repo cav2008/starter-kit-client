@@ -1,11 +1,12 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import getPokemon from '@api/pokemon';
+import { getPokemon } from '@api/pokemon';
 
 // Thunk to fetch
 export const fetchPokemon = createAsyncThunk('home/fetchByName', async (name: string, thunkApi) => {
   const response = await getPokemon(name);
+
   return response;
 });
 
