@@ -4,6 +4,9 @@ import { waitFor } from '@testing-library/react';
 // Use test-utils file because it wraps the render method with provider and redux store.
 import { render, screen } from '@utils/test-utils';
 
+import { server } from './mocks/server';
+import { pokemonHandlerException } from './mocks/handlers';
+
 import App from './App';
 
 describe('Home page', () => {
@@ -30,6 +33,19 @@ describe('Home page', () => {
     await waitFor(() => {
       expect(screen.getByTestId('pokemon-name')).not.toHaveTextContent('ditto');
       expect(screen.getByTestId('pokemon-name')).toHaveTextContent('pikachu');
+    });
+  });
+
+  it('should NOT see pikachu on fetch fail', async () => {
+    server.use(pokemonHandlerException);
+
+    render(<App />);
+
+    expect(screen.getByTestId('pokemon-name')).toHaveTextContent('ditto');
+
+    await waitFor(() => {
+      expect(screen.getByTestId('pokemon-name')).toHaveTextContent('ditto');
+      expect(screen.getByTestId('pokemon-name')).not.toHaveTextContent('pikachu');
     });
   });
 });

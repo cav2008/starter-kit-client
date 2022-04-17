@@ -18,3 +18,16 @@ export const handlers = [
     );
   }),
 ];
+
+export const pokemonHandlerException = rest.get(
+  'https://pokeapi.co/api/v2/pokemon/pikachu',
+  (req, res, ctx) => {
+    return res.once(
+      ctx.status(500),
+      ctx.json({
+        message: 'Internal server error',
+      }),
+      ctx.delay(150)
+    );
+  }
+);

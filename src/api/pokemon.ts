@@ -13,7 +13,7 @@ export const getPokemon = async (name: string): Promise<Pokemon> => {
     const data = await response.json();
 
     return data;
-  } catch (error) {
-    throw Error();
+  } catch (error: any) {
+    throw Error(error.message);
   }
 };

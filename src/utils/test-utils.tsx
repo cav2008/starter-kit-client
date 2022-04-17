@@ -1,10 +1,20 @@
 import React from 'react';
 import { render as rtlRender, RenderResult } from '@testing-library/react';
+import { configureStore, PreloadedState } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
+import rootReducer from '@slices/reducer';
 // Import your own reducer
 import appStore from '../store';
 
-function render(ui: React.ReactElement, { store = appStore, ...renderOptions } = {}): RenderResult {
+function render(
+  ui: React.ReactElement,
+  {
+    store = configureStore({
+      reducer: rootReducer,
+    }),
+    ...renderOptions
+  } = {}
+): RenderResult {
   function Wrapper({ children }: { children: React.ReactElement }) {
     return <Provider store={store}>{children}</Provider>;
   }
