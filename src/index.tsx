@@ -7,9 +7,11 @@ import App from './App';
 
 const containerDOM = document.getElementById('container');
 
-const root = createRoot(containerDOM!);
-root.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
-);
+if (containerDOM) {
+  const root = createRoot(containerDOM);
+  root.render(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+}

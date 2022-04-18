@@ -2,7 +2,7 @@
 import '@testing-library/jest-dom/extend-expect';
 // We need polyfill for fetch because Jest/Node does not have fetch().
 import 'whatwg-fetch';
-import { server } from './src/mocks/server.js';
+import server from './src/mocks/server';
 
 // Establish API mocking before all tests.
 beforeAll(() => server.listen());

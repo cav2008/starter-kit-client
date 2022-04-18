@@ -13,7 +13,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(fetchPokemon('pikachu'));
-  }, []);
+  }, [dispatch]);
 
   const onExampleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateExample(e.target.value));
@@ -52,7 +52,7 @@ const Home = () => {
 
       <div>
         <p data-testid="pokemon-name">{pokemon.species.name}</p>
-        <img src={pokemon.sprites.front_default} />
+        <img src={pokemon.sprites.front_default} alt={pokemon.species.name} />
       </div>
     </div>
   );

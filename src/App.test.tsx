@@ -4,7 +4,7 @@ import { waitFor } from '@testing-library/react';
 // Use test-utils file because it wraps the render method with provider and redux store.
 import { render, screen } from '@utils/test-utils';
 
-import { server } from './mocks/server';
+import server from './mocks/server';
 import { pokemonHandlerException } from './mocks/handlers';
 
 import App from './App';

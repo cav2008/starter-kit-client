@@ -7,13 +7,15 @@ interface Pokemon {
   };
 }
 
-export const getPokemon = async (name: string): Promise<Pokemon> => {
+const getPokemon = async (name: string): Promise<Pokemon> => {
   try {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-    const data = await response.json();
+    const data = (await response.json()) as Pokemon;
 
     return data;
-  } catch (error: any) {
+  } catch (error) {
     throw Error(error.message);
   }
 };
+
+export default getPokemon;

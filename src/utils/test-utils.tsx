@@ -1,10 +1,9 @@
 import React from 'react';
 import { render as rtlRender, RenderResult } from '@testing-library/react';
-import { configureStore, PreloadedState } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import rootReducer from '@slices/reducer';
 // Import your own reducer
-import appStore from '../store';
+import rootReducer from '@slices/reducer';
 
 function render(
   ui: React.ReactElement,
