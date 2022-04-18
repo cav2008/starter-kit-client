@@ -12,7 +12,11 @@ const Home = () => {
   const pokemon = useAppSelector((state) => state.home.pokemon);
 
   useEffect(() => {
-    dispatch(fetchPokemon('pikachu'));
+    const getData = async () => {
+      await dispatch(fetchPokemon('pikachu'));
+    };
+
+    void getData();
   }, [dispatch]);
 
   const onExampleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

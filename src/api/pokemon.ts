@@ -14,7 +14,9 @@ const getPokemon = async (name: string): Promise<Pokemon> => {
 
     return data;
   } catch (error) {
-    throw Error(error.message);
+    const { message } = error as Error;
+
+    throw Error(message);
   }
 };
 
