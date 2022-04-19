@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import classNames, { Binding } from 'classnames/bind';
 
 import { updateExample, updateExampleWithDate, fetchPokemon } from '@slices/homeSlice';
 // We use this hook so we don't need to add types all the time.
 import { useAppDispatch, useAppSelector } from '@hooks/reduxHooks';
+
+import styles from './Home.module.pcss';
+
+const cx = classNames.bind(styles as Binding);
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -55,7 +60,9 @@ const Home = () => {
       </form>
 
       <div>
-        <p data-testid="pokemon-name">{pokemon.species.name}</p>
+        <p className={cx('title')} data-testid="pokemon-name">
+          {pokemon.species.name}
+        </p>
         <img src={pokemon.sprites.front_default} alt={pokemon.species.name} />
       </div>
     </div>

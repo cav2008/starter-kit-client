@@ -33,6 +33,9 @@ module.exports = {
           },
           {
             loader: 'postcss-loader', // Run postcss actions
+            options: {
+              sourceMap: true,
+            },
           },
         ],
       },
